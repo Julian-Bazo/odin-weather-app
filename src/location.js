@@ -1,22 +1,21 @@
+import Weather from "./weatherObject";
 
+const reporter = document.querySelector(".reporter");
 
-export default async function getLocationTemp(city, celsius) {
+export default async function getLocationTemp(city) {
     let location = city;
     try {
     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=NYCJ5G62WGR8PDVCLDXLGCWBY`, {mode: `cors`});
     const weatherData = await response.json();
-    if (celsius === true) {
-        console.log(`Temperature: ${toCelsius(weatherData.currentConditions.temp)}°C`);
-    }
-    else {
-        console.log(`Temperature: ${weatherData.currentConditions.temp}°F`);
-    }
-    console.log(weatherData);
+    let weatherObject = await new Weather(`${weatherData.address}`, `${weatherData.currentConditions.conditions}`, `${weatherData.currentConditions.temp}`, `${weatherData.currentConditions.feelslike}`);
+    reporter.textContent = "";
+    return weatherObject;
     }
     catch(error) {
         console.log(error);
+        reporter.textContent = "Invalid location!"
+        reporter.style.color = "red";
     }
-
 }
 
 function toCelsius(num) {
@@ -24,3 +23,5 @@ function toCelsius(num) {
     return celsius;
 }
 
+
+export {toCelsius};

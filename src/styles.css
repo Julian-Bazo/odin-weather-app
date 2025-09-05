@@ -1,3 +1,28 @@
-* {
-    background-color: #eee;
+.search-div {
+    font-size: 1.5rem;
+}
+
+input {
+    font-size: 1.1rem;
+}
+
+select {
+    font-size: 1.1rem;
+}
+
+button {
+    font-size: 1rem;
+}
+
+.information-container {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+img {
+    width: 20rem;
+    /* border: 2px solid black;
+    border-radius: 1rem; */
 }

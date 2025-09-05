@@ -1,9 +1,12 @@
 import "./styles.css";
 
 console.log("Server online");
-import getLocationTemp from "./location";
+import search from "./search";
 
-getLocationTemp("Miami", true);
+const submitLocationButton = document.querySelector(".submit-location");
+
+submitLocationButton.addEventListener("click", search);
+
 
 
 // KEY: NYCJ5G62WGR8PDVCLDXLGCWBY
@@ -13,3 +16,5 @@ getLocationTemp("Miami", true);
 // Fahrenheit
 // Celsius
 // FeelsLike in both
+
+// Contains clear, rain, snow keywords for CSS

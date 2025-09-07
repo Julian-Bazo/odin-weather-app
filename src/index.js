@@ -11,10 +11,7 @@ submitLocationButton.addEventListener("click", search);
 
 // KEY: NYCJ5G62WGR8PDVCLDXLGCWBY
 
-// Conditions
-// Location
-// Fahrenheit
-// Celsius
-// FeelsLike in both
-
-// Contains clear, rain, snow keywords for CSS
+// Check out dynamic imports?
+// Loading component
+// Maybe integrate passing through the three day forecast
+    // Not really much more learning other than just doing obj.forecast.whatever
